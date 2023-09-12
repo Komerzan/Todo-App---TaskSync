@@ -1,0 +1,9 @@
+.lists{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit , minmax(290px  ,1fr));
+    margin: 0 auto;
+    max-width: 1440px;
+    justify-items: center;
+    padding-top: 20px;
+}

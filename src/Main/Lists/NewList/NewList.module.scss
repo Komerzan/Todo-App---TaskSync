@@ -1,0 +1,36 @@
+.newList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--purple);
+    width: 100%;
+    max-height: 340px;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover{
+        p{
+            color: var(--white);
+        }
+        svg{
+            path{
+                fill: var(--white);
+            }
+        }
+    }
+
+    p{
+        transition: all 0.3s ease ;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    svg{
+        width: 50px;
+        height: 50px;
+        path{
+            transition: all 0.3s ease ;
+        }
+    }
+}
+
