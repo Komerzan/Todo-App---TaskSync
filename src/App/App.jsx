@@ -8,11 +8,9 @@ function App() {
 
   return (
     <div className={styles.app}>
-     <div className={styles.app_wrapper}>
     <Header/>
     <Main/>
     <Footer/>
-    </div>
     </div>
   )
 }

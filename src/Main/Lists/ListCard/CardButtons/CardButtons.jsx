@@ -4,15 +4,17 @@ import Button from "../../../../UI/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewTask } from "../../../../../store/Features/TasksSlice";
 import {v1} from "uuid"
+import Task from "../Task/Task";
+import { useState } from "react";
+import NewTask from "../NewTask/NewTask";
 
-const CardButtons = ({listID}) => {
+const CardButtons = ({showNewTask}) => {
   const dispatch = useDispatch();
-  const createTask = () =>(
-    dispatch(addNewTask({id : v1() , content : 'New task' , isDone : false , date : new Date() , listID : listID}))
-  )
+
   return (
-    <div className={styles.card_buttons}>
-      <Button onClick={() => createTask()}>
+    <div>
+      <div className={styles.card_buttons}>
+      <Button onClick={showNewTask}>
         <svg
           id="Layer_1"
           height="12"
@@ -28,6 +30,7 @@ const CardButtons = ({listID}) => {
       <Button>All</Button>
       <Button>Active</Button>
       <Button>Completed</Button>
+    </div>
     </div>
   );
 };

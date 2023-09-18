@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import styles from "./CardUtils.module.scss";
+import { useDispatch } from "react-redux";
+import { removeList } from "../../../../../store/Features/ListsSlice";
 
-const CardUtils = () => {
+const CardUtils = ({listID}) => {
+  const dispatch = useDispatch();
   return (
     <div className={styles.card_utils}>
       <button>
@@ -48,6 +51,18 @@ const CardUtils = () => {
             <g></g>
           </g>
         </svg>
+      </button>
+      <button
+          title="Delete list"
+          onClick={() => dispatch(removeList(listID))}>
+          <svg
+            xmlnsXlink="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+          >
+            <path d="M23.707.293h0a1,1,0,0,0-1.414,0L12,10.586,1.707.293a1,1,0,0,0-1.414,0h0a1,1,0,0,0,0,1.414L10.586,12,.293,22.293a1,1,0,0,0,0,1.414h0a1,1,0,0,0,1.414,0L12,13.414,22.293,23.707a1,1,0,0,0,1.414,0h0a1,1,0,0,0,0-1.414L13.414,12,23.707,1.707A1,1,0,0,0,23.707.293Z" />
+          </svg>
       </button>
     </div>
   );

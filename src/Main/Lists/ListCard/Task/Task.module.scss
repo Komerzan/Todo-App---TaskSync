@@ -1,0 +1,42 @@
+.task {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: var(--purple);
+    border-radius: 5px;
+    padding: 3px 3px;
+    margin: 10px 0px;
+    z-index: -4;
+}
+
+.task_left {
+    display: flex;
+
+    .check {
+        margin-right: 5px;
+
+        svg {
+            path {
+                fill: grey;
+            }
+        }
+    }
+}
+
+.task_content{
+    display: block;
+    word-wrap: break-word;
+    line-height: 120%;
+    width: 220px;
+
+    textarea{
+        width: 100%;
+        background: rgba(255, 255, 255, 0.574);
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+        min-height: 30px;
+        resize: vertical;
+        word-break: break-all;
+    }
+}

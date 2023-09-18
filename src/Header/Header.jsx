@@ -14,7 +14,8 @@ const Header = () => {
           <Search />
           <Filter />
           <Hidden />
-        </div>
+      </div>
+
       </div>
       </div>
     </header>

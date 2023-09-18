@@ -1,0 +1,36 @@
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--purple);
+    border-radius: 5px;
+    padding: 3px 3px;
+    margin: 10px 0px;
+    z-index: -4;
+}
+
+.check {
+    margin-right: 5px;
+
+    svg {
+        path {
+            fill: grey;
+        }
+    }
+}
+
+.task_left{
+    max-width: 250px;
+    width: 100%;
+
+    textarea{
+        display: flex;
+        width: 100%;
+        max-width: 250px;
+        min-height: 20px;
+        background: rgba(255, 255, 255, 0.574);
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+    }
+}

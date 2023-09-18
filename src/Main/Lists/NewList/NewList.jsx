@@ -1,10 +1,18 @@
 import PropTypes from "prop-types";
 import styles from "./NewList.module.scss";
+import { useDispatch } from "react-redux";
+import { addNewList } from "../../../../store/Features/ListsSlice";
+import {v1} from 'uuid'
 
 const NewList = () => {
+  const dispatch = useDispatch();
+
+  const addList = () => (
+    dispatch(addNewList({id: v1(), listTitle: "Second list"}))
+  )
+
   return (
-    <div className={styles.newList}>
-    <div className={styles.content}></div>
+    <div className={styles.newList} onClick={() => addList()}>
       <p>Add new list</p>
       <svg
         id="Layer_1"

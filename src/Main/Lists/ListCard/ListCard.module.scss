@@ -1,11 +1,11 @@
 .listCard {
     width: 100%;
-    max-height: 340px;
-    height: fit-content;
+    height: 340px;
+    max-width: 337px;
     overflow: hidden;
     border: 2px solid var(--black);
     padding: 0px 10px 10px 10px;
-    border-radius: 0px 0px 10px 10px; 
+    border-radius: 10px; 
 }
 
 .card_header {
@@ -38,35 +38,12 @@
     padding: 5px 0px;
 }
 
-.task {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--purple);
-    border-radius: 5px;
-    padding: 3px 3px;
-    margin: 10px 0px;
-    z-index: -4;
-}
-
-.task_left {
-    display: flex;
-
-    .check {
-        margin-right: 5px;
-
-        svg {
-            path {
-                fill: grey;
-            }
-        }
-    }
-}
 
 .card_tasks{
     overflow-y: auto;
     max-height: 235px;
     height: fit-content;
     scrollbar-color: red;
+    border-radius: 10px; 
+    padding-right: 5px;
 }
-
