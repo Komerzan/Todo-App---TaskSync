@@ -3,6 +3,7 @@ import  styles from './App.module.scss'
 import Header from '../Header/Header'
 import Main from '../Main/Main'
 import Footer from '../Footer/Footer'
+import NewList from '../Main/Lists/NewList/NewList'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <Header/>
     <Main/>
     <Footer/>
+    <NewList/>
     </div>
   )
 }

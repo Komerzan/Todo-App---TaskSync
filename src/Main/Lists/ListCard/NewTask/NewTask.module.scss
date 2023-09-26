@@ -6,7 +6,7 @@
     border-radius: 5px;
     padding: 3px 3px;
     margin: 10px 0px;
-    z-index: -4;
+    z-index: 10;
 }
 
 .check {
@@ -22,15 +22,4 @@
 .task_left{
     max-width: 250px;
     width: 100%;
-
-    textarea{
-        display: flex;
-        width: 100%;
-        max-width: 250px;
-        min-height: 20px;
-        background: rgba(255, 255, 255, 0.574);
-        border: 1px solid black;
-        border-radius: 5px;
-        outline: none;
-    }
 }

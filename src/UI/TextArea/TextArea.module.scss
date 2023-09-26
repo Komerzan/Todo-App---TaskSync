@@ -1,0 +1,17 @@
+textarea{
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    max-width: 100%;
+    min-width: 100px;
+    width: 100%;
+    max-height: 200px;
+    min-height: 20px;
+    height: 100%;
+    line-height: 120%;
+    background: #f4fff2;
+    border: none;
+    border-radius: 5px;
+    overflow-y: scroll;
+    padding: 0;
+}

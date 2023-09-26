@@ -1,5 +1,8 @@
 .button{
+    display: flex;
     background-color: var(--purple);
+    justify-content: center;
+    align-items: center;
     border: none;
     border-radius: 7px;
     font-size: 12px;
@@ -7,7 +10,12 @@
     padding: 5px 10px;
     cursor: pointer;
     transition: all .5s;
+    border: 2px solid transparent;
     &:hover{
+        border-radius: 0px;
+    }
+    &.active{
+        border: 2px solid black;
         border-radius: 0px;
     }
 }

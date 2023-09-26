@@ -3,7 +3,7 @@ import styles from './Button.module.scss';
 
 const Button = (props) => {
   return (
-    <button className={styles.button} {...props}></button>
+    <button className={props.isActive ? `${styles.button} ${styles.active}` :  styles.button} {...props}>{props.children}</button>
   )
 }
 

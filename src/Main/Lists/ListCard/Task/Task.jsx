@@ -1,28 +1,46 @@
 import React, { useState } from "react";
 import TaskUtils from "../TaskUtils/TaskUtils";
-import styles from './Task.module.scss'
-import { useDispatch } from "react-redux";
-import { addNewTask, removeTask } from "../../../../../store/Features/TasksSlice";
+import styles from "./Task.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addNewTask,
+  changeContent,
+  changeStatus,
+  removeTask,
+} from "../../../../../store/Features/TasksSlice";
 import { v1 } from "uuid";
+import TextArea from "../../../../UI/TextArea/TextArea";
 
-export default function Task({listID ,  content, id }) {
-  const [hiddenTextArea , setHiddenTextArea] = useState(true)
-  const [changeContent , setChangeContent] = useState(content)
-  const dispatch = useDispatch()
-  const updateContent = ()=>{
-    if(hiddenTextArea === true){
-      setHiddenTextArea(false)
-    }else if(hiddenTextArea === false){
-      dispatch(addNewTask({id: v1(), content: changeContent, isDone: false, listID: listID}))
-      dispatch(removeTask(id))
-      setHiddenTextArea(true)
+export default function Task({ task, index, listID, content, id, isDone }) {
+  const [hiddenTextArea, setHiddenTextArea] = useState(true);
+  const [changedContent, setChangedContent] = useState(
+    content.replace(/\s+/g, " ").trim()
+  );
+  const dispatch = useDispatch();
+
+  const updateContent = () => {
+    if (hiddenTextArea === true) {
+      setHiddenTextArea(false);
+    } else {
+      dispatch(
+        changeContent({
+          id: id,
+          content: changedContent,
+        })
+      );
+      setHiddenTextArea(true);
     }
-  }
+  };
+
   return (
     <li className={styles.task}>
       <div className={styles.task_left}>
-        <div className={styles.check}>
+        <div
+          className={styles.check}
+          onClick={() => dispatch(changeStatus(id))}
+        >
           <svg
+            className={isDone ? styles.isDone : ""}
             xmlnsXlink="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             width="15"
@@ -32,10 +50,17 @@ export default function Task({listID ,  content, id }) {
           </svg>
         </div>
         <div className={styles.task_content}>
-        {hiddenTextArea ? content : <textarea value={changeContent} onChange={e => setChangeContent(e.target.value)}/>}
+          {hiddenTextArea ? (
+            <pre>{content}</pre>
+          ) : (
+            <TextArea
+              value={changedContent}
+              onChange={(e) => setChangedContent(e.target.value)}
+            />
+          )}
         </div>
       </div>
-      <TaskUtils setChangeContent={updateContent} id={id} />
+      <TaskUtils updateContent={updateContent} id={id} />
     </li>
   );
 }

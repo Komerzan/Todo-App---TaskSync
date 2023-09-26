@@ -7,21 +7,13 @@
 
 *{
 	box-sizing: border-box;
+	outline: none;
   }
 
 #root {
   margin: 0 auto;
   font-family: 'Fira Sans', sans-serif;
-  height: 100vh;
-
-  .container{
-	max-width: 1440px;
-  }
-
-  body{
-	position: relative;
-  }
-
+  margin-top: -1px;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -48,7 +40,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
 body {
+	position: relative;
 	line-height: 1;
 	background-color: var(--main-dark);
 }
@@ -80,17 +75,9 @@ button{
 	width: 10px;
 }
 
-::-webkit-scrollbar-track{
-	margin: 30px;
-}
 
 ::-webkit-scrollbar-thumb{
 	background-color: var(--black);
 	border-radius: 5px;
 }
 
-input{
-	background-color: transparent;
-	outline: none;
-	border: none;
-}

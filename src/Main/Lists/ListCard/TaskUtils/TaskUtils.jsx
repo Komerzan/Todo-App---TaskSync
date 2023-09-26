@@ -3,11 +3,11 @@ import styles from "./TaskUtils.module.scss";
 import { useDispatch } from "react-redux";
 import { removeTask } from "../../../../../store/Features/TasksSlice";
 
-const TaskUtils = ({ id , setChangeContent }) => {
+const TaskUtils = ({ id , updateContent }) => {
   const dispatch = useDispatch()
   return (
     <div className={styles.task_utils}>
-      <button className={styles.task_change} onClick={setChangeContent}>
+      <button className={styles.task_change} onClick={updateContent}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Outline"

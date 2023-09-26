@@ -1,15 +1,16 @@
-import PropTypes from "prop-types";
 import styles from "./NewTask.module.scss";
 import { addNewTask } from "../../../../../store/Features/TasksSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { v1 } from "uuid";
+import TextArea from "../../../../UI/TextArea/TextArea";
 
 const NewTask = ({showNewTask , listID}) => {
-  const [newContent , setNewContent] = useState()
+  const [newContent , setNewContent] = useState('')
   const dispatch = useDispatch();
   const createTask = () =>{
-    if(newContent.lenght < 1 || newContent === ''){
+    if(newContent.trim() === ''){
+      showNewTask()
     }else{
       dispatch(
         addNewTask({ id: v1(), content: newContent, isDone: false, listID: listID })
@@ -23,7 +24,7 @@ const NewTask = ({showNewTask , listID}) => {
     <>
       <li className={styles.task}>
         <div className={styles.task_left}>
-          <textarea value={newContent} onChange={e => setNewContent(e.target.value)}></textarea>
+        <TextArea value={newContent} onChange={e => setNewContent(e.target.value)}/>
         </div>
         <button onClick={createTask}>
           <svg

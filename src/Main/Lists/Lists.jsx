@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import styles from './Lists.module.scss';
 import { useSelector } from 'react-redux';
 import ListCard from './ListCard/ListCard';
-import NewList from './NewList/NewList';
 
 
 const Lists = () => {
@@ -11,14 +10,14 @@ const Lists = () => {
   useEffect(()=>{
     setLists(allLists)
   },[allLists])
-
   useSelector(state => state.lists)
+
+  console.log(allLists);
   return (
     <div className={styles.lists}>
-    <NewList/>
       {lists.map(item => {
         return <ListCard
-        key={item.id}
+          key={item.id}
           listID={item.id}
           title={item.listTitle}
           date={item.date}

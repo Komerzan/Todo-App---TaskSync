@@ -1,0 +1,21 @@
+.list_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 5px 0px;
+    max-width: 100%;
+    overflow: hidden;
+    p{
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    }
+
+    textarea{
+        font-size: inherit;
+        resize: vertical;
+        max-height: 100px;
+        overflow-y: auto;
+    }
+}

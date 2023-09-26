@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .header_wrapper {
